@@ -16,7 +16,7 @@ stages{
 			
 		stage("start-service"){
 			steps {
-				sh"service httpd start -y"
+				sh"service httpd start"
 			}
 			}
 			
