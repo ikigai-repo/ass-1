@@ -1,8 +1,8 @@
 pipeline{
 		agent {
 			label {
-					label'built-in'
-			customWorkspace "/project"
+					label'slave-1'
+			customWorkspace "/home/ec2-user"
 				}
 
 			}
@@ -10,19 +10,19 @@ stages{
 		stage("install-httpd"){
 		
 			steps {
-				sh"yum install httpd -y"
+				sh"sudo yum install httpd -y"
 		}	
 			}
 			
 		stage("start-service"){
 			steps {
-				sh"service httpd start"
+				sh"sudo service httpd start"
 			}
 			}
 			
 		stage("copy-paste"){
 			steps {
-				sh"cp /project/index.html /var/www/html"
+				sh"sudo cp /home/ec2-user/index.html /var/www/html"
 			}
 			}
 			
