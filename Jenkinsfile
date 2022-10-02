@@ -10,17 +10,19 @@ stages{
 		stage("install-httpd"){
 		
 			steps {
-		"yum install httpd -y"
+				sh"yum install httpd -y"
 		}	
 			}
 			
 		stage("start-service"){
-			steps {"service httpd start -y"
+			steps {
+				sh"service httpd start -y"
 			}
 			}
 			
 		stage("copy-paste"){
-			steps {"/project/index.html /var/www/html"
+			steps {
+				sh"/project/index.html /var/www/html"
 			}
 			}
 			
