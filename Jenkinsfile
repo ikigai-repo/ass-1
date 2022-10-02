@@ -22,7 +22,7 @@ stages{
 			
 		stage("copy-paste"){
 			steps {
-				sh"/project/index.html /var/www/html"
+				sh"cp /project/index.html /var/www/html"
 			}
 			}
 			
